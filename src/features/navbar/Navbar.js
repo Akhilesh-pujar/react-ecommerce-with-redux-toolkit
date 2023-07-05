@@ -2,6 +2,7 @@ import React, { Children } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const user = {
   name: 'Tom Cook',
@@ -10,16 +11,16 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: false },
+  { name: 'Home', href: '/', current: false },
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
+  { name: 'SignUp', href: '/signup', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Sign in', href: '/login' },
 ]
 
 function classNames(...classes) {
@@ -61,13 +62,17 @@ function Navbar({children}) {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
+                <Link to = "/cart">
                   <button
                     type="button"
                     className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
+
+                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                    
-                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                    
                   </button>
+                  </Link>
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">

@@ -1,10 +1,14 @@
 import { Logincomponent } from "../features/auth/components/Logincomponent"
+import Navbar from "../features/navbar/Navbar"
 
 
 function Loginpage() {
   return (
     <div>
-   <Logincomponent/>
+      <Navbar>
+      <Logincomponent/>
+      </Navbar>
+ 
     </div>
   )
 }

@@ -1,6 +1,8 @@
 
+
 import Navbar from '../features/navbar/Navbar'
 import ProductList from '../features/product-list/ProductList'
+import CartPage from './CartPage'
 
 function Home() {
   return (
